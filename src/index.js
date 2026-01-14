@@ -6,7 +6,7 @@ console.log("Webpack is running");
 renderHome();
 console.log("Generating home page");
 
-// getWeather("Auckland").then(renderWeather);
+getWeather("Auckland").then(renderWeather);
 console.log(getWeather("Auckland"));
 console.log("Arranging Auckland weather");
 

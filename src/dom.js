@@ -1,5 +1,12 @@
 export function renderWeather(weather) {
-    console.log("Rendering weather to DOM")
+    console.log("Rendering weather to DOM");
+    document.getElementById("location").textContent = weather.location;
+    // document.getElementById("weather-icon").src = weather.icon;
+    document.getElementById("temp").textContent = weather.temp + " °C";
+    document.getElementById("conditions").textContent = weather.conditions;
+    document.getElementById("temp-range").textContent = weather.tempMin + " °C" + " - " + weather.tempMax + " °C";
+    document.getElementById("humidity").textContent = weather.humidity;
+    document.getElementById("wind").textContent = weather.wind;
 }
 
 export function renderHome() {
