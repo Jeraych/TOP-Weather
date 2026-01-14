@@ -14,7 +14,7 @@ export function renderHome() {
     const form = document.createElement("form");
     form.id = "city-form";
     form.innerHTML = `
-    <input type="text" id="city-input" placeholder="Enter city name" required />
+    <input type="text" id="city-input" placeholder="Enter city name" required autocomplete="off" />
     <button type="submit">Get Weather</button>`;
     app.appendChild(form);
 
