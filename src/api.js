@@ -13,5 +13,8 @@ export async function getWeather(city) {
         icon: today.icon,
         humidity: today.humidity,
         wind: today.windspeed,
+        sunrise: today.sunrise,
+        sunset: today.sunset,
+        hours: today.hours,
     };
 }

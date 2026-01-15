@@ -5,8 +5,23 @@ export function renderWeather(weather) {
     document.getElementById("temp").textContent = weather.temp + " °C";
     document.getElementById("conditions").textContent = weather.conditions;
     document.getElementById("temp-range").textContent = weather.tempMin + " °C" + " - " + weather.tempMax + " °C";
-    document.getElementById("humidity").textContent = weather.humidity;
-    document.getElementById("wind").textContent = weather.wind;
+    document.getElementById("humidity").textContent = "Humidity: " + weather.humidity;
+    document.getElementById("wind").textContent = "Wind: " + weather.wind;
+    document.getElementById("sunrise").textContent = "Sunrise: " + weather.sunrise;
+    document.getElementById("sunset").textContent = "Sunset: " + weather.sunset;
+
+    const hours = weather.hours;
+    const hourly = document.getElementById("hourly-forecast");
+    hourly.innerHTML = ""; // clear old data
+
+    hours.forEach(hour => {
+        const hourEl = document.createElement("div");
+        hourEl.classList.add("hour");
+
+        hourEl.textContent = `${hour.datetime} – ${hour.temp}°C – ${hour.conditions}`;
+
+        hourly.appendChild(hourEl);
+    });
 }
 
 export function renderHome() {
