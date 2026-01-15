@@ -7,7 +7,7 @@ The goal was to practice **API integration, asynchronous JavaScript, and DOM man
 
 ## Live Demo
 
-Try the project live here: [Weather App Demo](#https://jeraych.github.io/TOP-Weather/)
+Try the project live here: [Weather App Demo](https://jeraych.github.io/TOP-Weather/)
 
 ---
 
