@@ -18,7 +18,12 @@ export function renderWeather(weather) {
         const hourEl = document.createElement("div");
         hourEl.classList.add("hour");
 
-        hourEl.textContent = `${hour.datetime} – ${hour.temp}°C – ${hour.conditions}`;
+        hourEl.innerHTML = `
+          <strong>${hour.datetime.slice(0, 5)}</strong>
+          <div>${hour.temp}°C</div>
+          <div>${hour.conditions}</div>
+        `;
+
 
         hourly.appendChild(hourEl);
     });
