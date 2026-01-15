@@ -1,5 +1,6 @@
 export async function getWeather(city) {
     console.log("Fetching weather data");
+    document.getElementById("loader").classList.remove("hidden");
     const API_KEY = '54PRMHDBPCVUKVUV2FM9FVFNY';
     const response = await fetch("https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/" + city + "?key=" + API_KEY + "&unitGroup=metric");
     const data = await response.json();

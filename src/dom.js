@@ -1,5 +1,6 @@
 export function renderWeather(weather) {
     console.log("Rendering weather to DOM");
+    document.getElementById("loader").classList.add("hidden");
     document.getElementById("location").textContent = weather.location;
     document.getElementById("weather-icon").src = `https://raw.githubusercontent.com/visualcrossing/WeatherIcons/main/PNG/1st%20Set%20-%20Color/${weather.icon}.png`;
     document.getElementById("temp").textContent = weather.temp + " °C";
@@ -55,7 +56,8 @@ export function renderHome() {
     form.id = "city-form";
     form.innerHTML = `
     <input type="text" id="city-input" placeholder="Enter city name" required autocomplete="off" />
-    <button type="submit">Get Weather</button>`;
+    <button type="submit">Get Weather</button>
+    <div id="loader" class="loader hidden"></div>`;
     app.appendChild(form);
 
     const display = document.createElement("section");
