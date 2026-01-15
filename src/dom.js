@@ -1,14 +1,22 @@
 export function renderWeather(weather) {
     console.log("Rendering weather to DOM");
     document.getElementById("location").textContent = weather.location;
-    // document.getElementById("weather-icon").src = weather.icon;
+    document.getElementById("weather-icon").src = `https://raw.githubusercontent.com/visualcrossing/WeatherIcons/main/PNG/1st%20Set%20-%20Color/${weather.icon}.png`;
     document.getElementById("temp").textContent = weather.temp + " °C";
     document.getElementById("conditions").textContent = weather.conditions;
     document.getElementById("temp-range").textContent = weather.tempMin + " °C" + " - " + weather.tempMax + " °C";
-    document.getElementById("humidity").textContent = "Humidity: " + weather.humidity;
-    document.getElementById("wind").textContent = "Wind: " + weather.wind;
-    document.getElementById("sunrise").textContent = "Sunrise: " + weather.sunrise;
-    document.getElementById("sunset").textContent = "Sunset: " + weather.sunset;
+    document.getElementById("humidity").innerHTML =
+        "<strong>Humidity:</strong> " + weather.humidity;
+
+    document.getElementById("wind").innerHTML =
+        "<strong>Wind:</strong> " + weather.wind;
+
+    document.getElementById("sunrise").innerHTML =
+        "<strong>Sunrise:</strong> " + weather.sunrise;
+
+    document.getElementById("sunset").innerHTML =
+        "<strong>Sunset:</strong> " + weather.sunset;
+
 
     const hours = weather.hours;
     const hourly = document.getElementById("hourly-forecast");
@@ -20,6 +28,11 @@ export function renderWeather(weather) {
 
         hourEl.innerHTML = `
           <strong>${hour.datetime.slice(0, 5)}</strong>
+          <img
+            class="hour-icon"
+            src="https://raw.githubusercontent.com/visualcrossing/WeatherIcons/main/PNG/1st%20Set%20-%20Color/${hour.icon}.png"
+            alt="${hour.conditions}"
+          />
           <div>${hour.temp}°C</div>
           <div>${hour.conditions}</div>
         `;
