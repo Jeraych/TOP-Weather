@@ -49,8 +49,8 @@ Try the project live here: [Weather App Demo](https://jeraych.github.io/TOP-Weat
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/weather-app.git  
-cd weather-app
+git clone https://github.com/Jeraych/TOP-Weather.git 
+cd TOP-Weather
 ```
 
 2. Install dependencies:
@@ -65,13 +65,15 @@ npm install
 npm start
 ```
 
+- Edit files in `src/` and the browser will auto-refresh.
+
 4. Build production-ready files:
 
 ```bash
 npm run build
 ```
 
-- This generates a dist/ folder containing the bundled app ready for deployment.
+- This generates a `dist/` folder containing the bundled app ready for deployment.
 
 ---
 
